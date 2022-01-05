@@ -1,0 +1,282 @@
+<form *ngIf='up'>
+  <div  class="form-group container mt-4" >
+    <div class="row">
+      <div class="col-6">
+        <h6>BROKER DETAILS</h6>
+        <div class="row-6 mb-4">
+          <form [formGroup]="addForm">
+            <input [(ngModel)]="company_name" formControlName="cname" type="text" class="form-control"
+              placeholder="Company Name">
+            <span *ngIf="cname.invalid && cname.touched" class="text-danger">Company Name is Required</span>
+          </form>
+        </div>
+        <h6>COMMUNICATION DETAILS</h6>
+        <div class="row-6 mt-4">
+          <form [formGroup]="addForm">
+            <div class="form-row">
+            </div>
+            <div class="form-group">
+              <input [(ngModel)]="house_no" formControlName="iaddress" type="text" class="form-control" id="inputAddress"
+                placeholder="House No.">
+              <span *ngIf="street.invalid && street.touched" class="text-danger">House No. is Required</span>
+            </div>
+            <div class="form-group">
+              <br>
+              <input [(ngModel)]="street_add" formControlName="street" type="text" class="form-control" id="inputAddress2"
+                placeholder="Street">
+              <span *ngIf="street.invalid && street.touched" class="text-danger">Street is Required</span>
+  
+            </div>
+            <div class="form-group">
+              <br>
+              <input [(ngModel)]="city_add" formControlName="city" type="text" class="form-control" id="inputAddress2"
+                placeholder="City/Town">
+              <span *ngIf="city.invalid && city.touched" class="text-danger">City/Town is Required</span>
+  
+            </div>
+            <div class="form-group">
+              <br>
+              <input [(ngModel)]="post_code" formControlName="postcode" type="text" class="form-control"
+                id="inputAddress2" placeholder="Postcode">
+              <span *ngIf="postcode.invalid && postcode.touched" class="text-danger">Post Code is Required</span>
+  
+            </div>
+            <div class="row">
+              <div class="form-group col-4">
+                <label for="vat">VAT</label>
+                <input [(ngModel)]="vat_n" formControlName="vat" type="number" class="form-control" id="vat"
+                  placeholder="vat">
+                <span *ngIf="vat.invalid && vat.touched" class="text-danger">Vat is Required</span>
+  
+              </div>
+              <div class="form-group col-md-8">
+                <br>
+                <input [(ngModel)]="vat_no" formControlName="vatNumber" type="text" class="form-control" id="VAT Number"
+                  placeholder="VAT Number">
+                <span *ngIf="vatNumber.invalid && vatNumber.touched" class="text-danger">Vat Number is Required</span>
+              </div>
+            </div>
+            <br>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Hold Commission</label>
+            </div>
+            <br>
+  
+            <input [(ngModel)]="hold_commision" formControlName="note" type="text" class="form-control" id="inputAddress"
+              placeholder="Hold Commission Note">
+            <span *ngIf="note.invalid && vatNumber.touched" class="text-danger">Commission Note is Required</span>
+            <h6 class="mt-4">LOGIN DETAILS</h6>
+            <div class="mt-4">
+              <input [(ngModel)]="user_name" formControlName="userName" type="text" class="form-control" id="inputAddress"
+                placeholder="User Name">
+              <span *ngIf="userName.invalid && vatNumber.touched" class="text-danger">User Name is Required</span>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+      <!-- /////Contact Details -->
+  
+      <div class="col-6 mt-4">
+        <h6>CONTACT DETAILS</h6>
+        <div class="row-6 mt-4">
+          <form [formGroup]="addForm">
+            <div class="form-row">
+            </div>
+            <div class="form-group mt-4">
+              <input [(ngModel)]="fname" formControlName="firstName" type="text" class="form-control" id="inputAddress"
+                placeholder="First Name">
+            </div>
+            <span *ngIf="firstName.invalid && firstName.touched" class="text-danger">First Name is Required</span>
+  
+            <div class="form-group mt-4">
+              <input [(ngModel)]="middle_name" formControlName="middletName" type="text" class="form-control"
+                id="inputAddress2" placeholder="Middle Name">
+              <span *ngIf="middletName.invalid && middletName.touched" class="text-danger">Middle Name is Required</span>
+  
+            </div>
+            <div class="form-group mt-4">
+  
+              <input [(ngModel)]="last_name" formControlName="lastName" type="text" class="form-control"
+                id="inputAddress2" placeholder="Last Name">
+              <span *ngIf="lastName.invalid && email.touched" class="text-danger">Last Name is Required</span>
+  
+            </div>
+            <div class="form-group mt-4">
+  
+              <input [(ngModel)]="email_co" formControlName="email" type="text" class="form-control" placeholder="Email">
+              <span *ngIf="email.invalid && email.touched" class="text-danger">Email is Required</span>
+            </div>
+            <div class="form-group mt-4">
+              <input [(ngModel)]="mob_no" formControlName="phone" type="number" class="form-control" id="inputAddress2"
+                placeholder="Mobile Number">
+              <span *ngIf="phone.invalid && phone.touched" class="text-danger">Mobile no is Required(minimum length
+                10,numbers are only allowed)</span>
+  
+            </div>
+            <div class="form-group mt-4">
+              <input [(ngModel)]="no_days" formControlName="message" type="number" class="form-control" id="inputAddress2"
+                placeholder="Number of days for invoice due date">
+              <span *ngIf="message.invalid && message.touched" class="text-danger">Number of days for invoice due date is
+                Required</span>
+  
+            </div>
+            <h6 class="mt-4">SETTINGS</h6>
+            <div class="row mt-4">
+              <div class="form-group col-6 mt-4">
+                <label for="inputCity">Maximum Uplift For Unit Charges</label>
+              </div>
+              <div class="form-group col-3">
+                <label for="inputCity">Electricity</label>
+                <input [(ngModel)]="electricity_unit_charges_electricity" formControlName="electricity" type="number"
+                  class="form-control" id="electricity">
+  
+              </div>
+              <div class="form-group col-3">
+                <label for="inputCity">Gas</label>
+                <input [(ngModel)]="electricity_unit_charges_gas" formControlName="gas" type="number" class="form-control"
+                  id="gas">
+  
+              </div>
+              <div class="form-group col-6 mt-4">
+                <label for="inputCity">Maximum Uplift For Fixed Standing Charges</label>
+              </div>
+              <div class="form-group col-3">
+                <label for="inputCity">Electricity</label>
+                <input [(ngModel)]="standing_chrages_electricty" formControlName="electricity1" type="number"
+                  class="form-control" id="electricity">
+  
+              </div>
+              <div class="form-group col-3">
+                <label for="inputCity">Gas</label>
+                <input [(ngModel)]="standing_charges_gas" formControlName="gas1" type="number" class="form-control"
+                  id="gas">
+  
+              </div>
+              <div class="form-group col-6 mt-4">
+                <label for="inputCity">Default Margine Discount Percentage</label>
+              </div>
+              <div class="form-group col-3">
+                <label for="inputCity">Electricity</label>
+                <input [(ngModel)]="discount_perc_electricity" formControlName="electricity2" type="number"
+                  class="form-control" id="electricity">
+  
+              </div>
+              <div class="form-group col-3">
+                <label for="inputCity">Gas</label>
+                <input [(ngModel)]="discount_perc_gas" formControlName="gas2" type="number" class="form-control" id="gas">
+  
+              </div>
+  
+            </div>
+  
+          </form>
+        </div>
+      </div>
+  
+    </div>
+    <!-- <label class="text-center" for="exampleInputEmail1">Email address</label> -->
+    <h5 *ngIf="check" class="text-center text-danger">Please, Fill all the fields</h5>
+    <div class="text-center mt-4">
+     
+      <!-- <button (click)="clicksub()" [disabled]="addForm.invalid" type="button" class="btn btn-primary">Save</button> -->
+      <button (click)="fun()" type="button" class="btn btn-primary">Save</button>
+  
+      <button (click)="d()" type="button" class="btn btn-light m-4">View All</button>
+  
+    </div>
+  
+    <!-- //Contact DETAILS -->
+  
+  
+  </div>
+  
+</form>
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<div *ngIf='down'>
+  <div style="text-align: right;">
+    <button (click)="u()" type="button" class="btn btn-primary m-4">View Form</button>
+  </div>
+  <table  class="table">
+  
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Company Name</th>
+        <th scope="col">House Number</th>
+        <th scope="col">Street</th>
+        <th scope="col">City/Town</th>
+        <th scope="col">Poast Code</th>
+        <th scope="col">Vat</th>
+        <th scope="col">Vat Number</th>
+        <th scope="col">Commision Note</th>
+        <th scope="col">User Name</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Middle Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile Number</th>
+        <th scope="col">Invoice Due Date</th>
+        <th scope="col">Maximum Unit Charges(Ele)</th>
+        <th scope="col">Maximum Unit Charges(Gas)</th>
+        <th scope="col">Maximum Ficed Standind Charges(Ele)</th>
+        <th scope="col">Maximum Ficed Standind Charges(Gas)</th>
+        <th scope="col">Disscount Percentage(Ele)</th>
+        <th scope="col">Disscount Percentage(Gas)</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of data;index as in">
+        <th scope="col">{{in+1}}</th>
+        <th scope="col">{{i.company_name}}</th>
+        <th scope="col">{{i.house_no}}</th>
+        <th scope="col">{{i.street_add}}</th>
+        <th scope="col">{{i.city_add}}</th>
+        <th scope="col">{{i.post_code}}</th>
+        <th scope="col">{{i.vat_n}}</th>
+        <th scope="col">{{i.vat_no}}</th>
+        <th scope="col">{{i.hold_commision}}</th>
+        <th scope="col">{{i.user_name}}</th>
+        <th scope="col">{{i.fname}}</th>
+        <th scope="col">{{i.middle_name}}</th>
+        <th scope="col">{{i.last_name}}</th>
+        <th scope="col">{{i.email_co}}</th>
+        <th scope="col">{{i.mob_no}}</th>
+        <th scope="col">{{i.no_days}}</th>
+        <th scope="col">{{i.electricity_unit_charges_electricity}}</th>
+        <th scope="col">{{i.electricity_unit_charges_gas}}</th>
+        <th scope="col">{{i.standing_chrages_electricty}}</th>
+        <th scope="col">{{i.standing_charges_gas}}</th>
+        <th scope="col">{{i.discount_perc_electricity}}</th>
+        <th scope="col">{{i.discount_perc_gas}}</th>
+        <th><i (click)="edit()" class="bi bi-pencil"></i></th>
+        <th><i (click)="delete(in)" class="bi bi-trash-fill"></i></th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->
+
+<router-outlet></router-outlet>
